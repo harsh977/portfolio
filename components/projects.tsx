@@ -42,22 +42,22 @@ export function Projects() {
   const isInView = useInView(ref, { once: true })
 
   return (
-    <section id="projects" className="py-32 bg-gray-900/30" ref={ref}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section id="projects" className="py-16 md:py-32 bg-gray-900/30" ref={ref}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-12 md:mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-light mb-6 text-gray-100 tracking-tight">Featured Projects</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-light mb-6 text-gray-100 tracking-tight">Featured Projects</h2>
           <div className="w-24 h-px bg-gray-400 mx-auto mb-8"></div>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto font-light leading-relaxed">
+          <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto font-light leading-relaxed">
             Innovative solutions that showcase technical expertise and problem-solving abilities
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -67,7 +67,7 @@ export function Projects() {
             >
               <Card className="bg-gray-800/30 border-gray-700/50 backdrop-blur-sm h-full hover:bg-gray-800/50 transition-all duration-500 group">
                 <CardHeader className="pb-4">
-                  <CardTitle className="text-xl text-gray-200 font-light">{project.title}</CardTitle>
+                  <CardTitle className="text-lg md:text-xl text-gray-200 font-light">{project.title}</CardTitle>
                   <p className="text-sm text-gray-400 font-light">{project.subtitle}</p>
                 </CardHeader>
                 <CardContent className="space-y-6">
@@ -101,7 +101,7 @@ export function Projects() {
                       <Button
                         variant="outline"
                         size="sm"
-                        className="border-gray-600 text-gray-300 hover:bg-gray-700 hover:border-gray-500 font-medium transition-all duration-300"
+                        className="border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white hover:border-gray-900 font-medium transition-all duration-300"
                         asChild
                       >
                         <a href={project.github} target="_blank" rel="noopener noreferrer">
@@ -122,37 +122,30 @@ export function Projects() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-20"
+          className="mt-12 md:mt-20"
         >
-          <h3 className="text-2xl font-light mb-12 text-center text-gray-200">Publications & Research</h3>
-          <div className="grid md:grid-cols-2 gap-8">
+          <h3 className="text-xl md:text-2xl font-light mb-12 text-center text-gray-200">Publications & Research</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             <Card className="bg-gray-800/30 border-gray-700/50 backdrop-blur-sm">
-              <CardContent className="p-8">
+              <CardContent className="p-6 md:p-8">
                 <h4 className="text-lg font-light text-gray-200 mb-3">Dataset Publication</h4>
                 <p className="text-sm text-gray-400 mb-4 font-light">Mendeley Data, V1 (2025)</p>
                 <p className="text-gray-300 text-sm mb-6 leading-relaxed font-light">
                   Indian English Speech Emotion Dataset - A comprehensive dataset of 1,000 original audio samples from
                   native Indian English speakers across four emotions, achieving 96% accuracy with LSTM models.
                 </p>
-               <a
-  href="https://doi.org/10.17632/mtk28hgc6x.1"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  <Button
-    size="sm"
-    variant="outline"
-    className="border-gray-500 text-gray-300 hover:bg-gray-700 font-medium"
-  >
-    View Publication
-  </Button>
-</a>
-
+                <Button
+                  size="sm"
+                  variant="outline"
+                  className="border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white hover:border-gray-900 font-medium"
+                >
+                  View Publication
+                </Button>
               </CardContent>
             </Card>
 
             <Card className="bg-gray-800/30 border-gray-700/50 backdrop-blur-sm">
-              <CardContent className="p-8">
+              <CardContent className="p-6 md:p-8">
                 <h4 className="text-lg font-light text-gray-200 mb-3">Under Review</h4>
                 <p className="text-sm text-gray-400 mb-4 font-light">
                   International Journal of Computing and Digital Systems
@@ -164,7 +157,7 @@ export function Projects() {
                 <Button
                   size="sm"
                   variant="outline"
-                  className="border-gray-500 text-gray-300 hover:bg-gray-700 font-medium"
+                  className="border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white hover:border-gray-900 font-medium"
                 >
                   Under Review
                 </Button>

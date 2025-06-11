@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 
 export function Hero() {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden py-16 md:py-32">
       {/* Subtle Background Pattern */}
       <div className="absolute inset-0 bg-gray-950">
         <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 to-gray-950" />
@@ -21,14 +21,14 @@ export function Hero() {
         />
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 lg:px-8 text-center relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
           <motion.h1
-            className="text-5xl md:text-7xl lg:text-8xl font-light mb-8 text-gray-100 tracking-tight"
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-light mb-8 text-gray-100 tracking-tight"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
@@ -36,7 +36,7 @@ export function Hero() {
             Harsh Daftari
           </motion.h1>
 
-          <div className="text-xl md:text-2xl text-gray-400 mb-12 h-16 font-light tracking-wide">
+          <div className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-12 h-16 font-light tracking-wide">
             <TypeAnimation
               sequence={[
                 "Full Stack Developer",
@@ -55,7 +55,7 @@ export function Hero() {
           </div>
 
           <motion.p
-            className="text-lg text-gray-500 mb-16 max-w-3xl mx-auto leading-relaxed font-light"
+            className="text-base sm:text-lg text-gray-500 mb-16 max-w-3xl mx-auto leading-relaxed font-light"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
@@ -71,20 +71,21 @@ export function Hero() {
             transition={{ delay: 1, duration: 0.8 }}
           >
             <a
-  href="/Resume.pdf"
-  download
-  className="inline-flex items-center bg-gray-100 hover:bg-white text-gray-900 px-8 py-4 text-sm tracking-wide font-medium rounded-md transition-all duration-300"
->
-  <Download className="mr-2 h-4 w-4" />
-  Download Resume
-</a>
+              href="/Resume.pdf"
+              download
+              className="inline-flex items-center bg-gray-100 hover:bg-white text-gray-900 px-8 py-4 text-sm tracking-wide font-medium rounded-md transition-all duration-300"
+            >
+              <Download className="mr-2 h-4 w-4" />
+              Download Resume
+            </a>
 
             <Button
               variant="outline"
               size="lg"
-              className="border-gray-600 text-gray-300 hover:bg-gray-800 hover:border-gray-500 px-8 py-4 text-sm tracking-wide font-medium transition-all duration-300"
+              className="border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white hover:border-gray-900 px-8 py-4 text-sm tracking-wide font-medium transition-all duration-300"
+              asChild
             >
-              View Projects
+              <a href="#projects">View Projects</a>
             </Button>
           </motion.div>
 

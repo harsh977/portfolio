@@ -71,34 +71,34 @@ export function Achievements() {
   const isInView = useInView(ref, { once: true })
 
   return (
-    <section id="achievements" className="py-32" ref={ref}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section id="achievements" className="py-16 md:py-32" ref={ref}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-12 md:mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-light mb-6 text-gray-100 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-light mb-6 text-gray-100 tracking-tight">
             Achievements & Recognition
           </h2>
           <div className="w-24 h-px bg-gray-400 mx-auto mb-8"></div>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto font-light leading-relaxed">
+          <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto font-light leading-relaxed">
             Celebrating victories in hackathons, competitions, and leadership roles
           </p>
         </motion.div>
 
         {/* Hackathon Wins */}
-        <div className="mb-20">
+        <div className="mb-12 md:mb-20">
           <motion.h3
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-2xl font-light mb-12 text-gray-200"
+            className="text-xl md:text-2xl font-light mb-12 text-gray-200"
           >
             🏆 Hackathon Victories
           </motion.h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {achievements.map((achievement, index) => (
               <motion.div
                 key={achievement.title}
@@ -107,7 +107,7 @@ export function Achievements() {
                 transition={{ duration: 0.8, delay: index * 0.05 }}
               >
                 <Card className="bg-gray-800/30 border-gray-700/50 backdrop-blur-sm h-full hover:bg-gray-800/50 transition-all duration-500 group">
-                  <CardContent className="p-8 text-center">
+                  <CardContent className="p-6 md:p-8 text-center">
                     <motion.div
                       className="inline-flex p-4 rounded-full bg-gray-700/50 mb-6 border border-gray-600/30"
                       whileHover={{ scale: 1.05 }}
@@ -130,11 +130,11 @@ export function Achievements() {
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-2xl font-light mb-12 text-gray-200"
+            className="text-xl md:text-2xl font-light mb-12 text-gray-200"
           >
             👥 Leadership & Extracurricular
           </motion.h3>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {leadership.map((item, index) => (
               <motion.div
                 key={item.title}
@@ -143,7 +143,7 @@ export function Achievements() {
                 transition={{ duration: 0.8, delay: 0.4 + index * 0.05 }}
               >
                 <Card className="bg-gray-800/30 border-gray-700/50 backdrop-blur-sm h-full hover:bg-gray-800/50 transition-all duration-500">
-                  <CardContent className="p-8">
+                  <CardContent className="p-6 md:p-8">
                     <item.icon className="h-8 w-8 text-gray-300 mb-6" />
                     <h4 className="text-lg font-light text-gray-200 mb-3">{item.title}</h4>
                     <p className="text-gray-400 text-sm font-light">{item.description}</p>

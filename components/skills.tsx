@@ -33,22 +33,22 @@ export function Skills() {
   const isInView = useInView(ref, { once: true })
 
   return (
-    <section id="skills" className="py-32" ref={ref}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section id="skills" className="py-16 md:py-32" ref={ref}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-12 md:mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-light mb-6 text-gray-100 tracking-tight">Technical Skills</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-light mb-6 text-gray-100 tracking-tight">Technical Skills</h2>
           <div className="w-24 h-px bg-gray-400 mx-auto mb-8"></div>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto font-light leading-relaxed">
+          <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto font-light leading-relaxed">
             A comprehensive toolkit for building modern, scalable applications
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.title}
@@ -57,8 +57,8 @@ export function Skills() {
               transition={{ duration: 0.8, delay: categoryIndex * 0.1 }}
             >
               <Card className="bg-gray-800/30 border-gray-700/50 backdrop-blur-sm h-full hover:bg-gray-800/50 transition-all duration-500">
-                <CardContent className="p-8">
-                  <h3 className="text-xl font-light mb-6 text-gray-200">{category.title}</h3>
+                <CardContent className="p-6 md:p-8">
+                  <h3 className="text-lg md:text-xl font-light mb-6 text-gray-200">{category.title}</h3>
                   <div className="space-y-4">
                     {category.skills.map((skill, skillIndex) => (
                       <motion.div
@@ -87,24 +87,24 @@ export function Skills() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-20"
+          className="mt-12 md:mt-20"
         >
           <Card className="bg-gray-800/30 border-gray-700/50 backdrop-blur-sm">
-            <CardContent className="p-10">
-              <h3 className="text-2xl font-light mb-8 text-center text-gray-200">Coding Achievements</h3>
-              <div className="grid md:grid-cols-3 gap-8 text-center">
-                <div className="p-6">
-                  <div className="text-4xl font-light text-gray-200 mb-3">3⭐</div>
+            <CardContent className="p-6 md:p-10">
+              <h3 className="text-xl md:text-2xl font-light mb-8 text-center text-gray-200">Coding Achievements</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-center">
+                <div className="p-4 md:p-6">
+                  <div className="text-3xl md:text-4xl font-light text-gray-200 mb-3">3⭐</div>
                   <div className="text-gray-400 font-light">CodeChef Rating</div>
                   <div className="text-sm text-gray-500 mt-1 font-light">Peak: 1630</div>
                 </div>
-                <div className="p-6">
-                  <div className="text-4xl font-light text-gray-200 mb-3">300+</div>
+                <div className="p-4 md:p-6">
+                  <div className="text-3xl md:text-4xl font-light text-gray-200 mb-3">300+</div>
                   <div className="text-gray-400 font-light">DSA Problems</div>
                   <div className="text-sm text-gray-500 mt-1 font-light">CodeChef, LeetCode, GFG</div>
                 </div>
-                <div className="p-6">
-                  <div className="text-4xl font-light text-gray-200 mb-3">C++</div>
+                <div className="p-4 md:p-6">
+                  <div className="text-3xl md:text-4xl font-light text-gray-200 mb-3">C++</div>
                   <div className="text-gray-400 font-light">Primary Language</div>
                   <div className="text-sm text-gray-500 mt-1 font-light">Competitive Programming</div>
                 </div>

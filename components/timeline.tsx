@@ -48,17 +48,17 @@ export function Timeline() {
   const isInView = useInView(ref, { once: true })
 
   return (
-    <section id="timeline" className="py-32 bg-gray-900/30" ref={ref}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section id="timeline" className="py-16 md:py-32 bg-gray-900/30" ref={ref}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-12 md:mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-light mb-6 text-gray-100 tracking-tight">My Journey</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-light mb-6 text-gray-100 tracking-tight">My Journey</h2>
           <div className="w-24 h-px bg-gray-400 mx-auto mb-8"></div>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto font-light leading-relaxed">
+          <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto font-light leading-relaxed">
             From academic excellence to hackathon victories - a timeline of growth and achievements
           </p>
         </motion.div>
@@ -67,7 +67,7 @@ export function Timeline() {
           {/* Timeline Line */}
           <div className="absolute left-1/2 transform -translate-x-1/2 w-px h-full bg-gray-600" />
 
-          <div className="space-y-16">
+          <div className="space-y-8 md:space-y-16">
             {timelineEvents.map((event, index) => (
               <motion.div
                 key={event.year}
@@ -76,14 +76,14 @@ export function Timeline() {
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 className={`flex items-center ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}
               >
-                <div className={`w-5/12 ${index % 2 === 0 ? "pr-12" : "pl-12"}`}>
+                <div className={`w-5/12 ${index % 2 === 0 ? "pr-6 md:pr-12" : "pl-6 md:pl-12"}`}>
                   <Card className="bg-gray-800/30 border-gray-700/50 backdrop-blur-sm hover:bg-gray-800/50 transition-all duration-500">
-                    <CardContent className="p-8">
+                    <CardContent className="p-6 md:p-8">
                       <div className="inline-flex p-3 rounded-full bg-gray-700/50 mb-6 border border-gray-600/30">
                         <event.icon className="h-6 w-6 text-gray-300" />
                       </div>
-                      <div className="text-2xl font-light text-gray-200 mb-3">{event.year}</div>
-                      <h3 className="text-xl font-light text-gray-100 mb-2">{event.title}</h3>
+                      <div className="text-xl md:text-2xl font-light text-gray-200 mb-3">{event.year}</div>
+                      <h3 className="text-lg md:text-xl font-light text-gray-100 mb-2">{event.title}</h3>
                       <p className="text-gray-400 text-sm mb-4 font-light">{event.institution}</p>
                       <p className="text-gray-300 text-sm mb-6 leading-relaxed font-light">{event.description}</p>
                       <div className="space-y-2">
